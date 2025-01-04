@@ -190,7 +190,7 @@ private val viewModel by viewModels<ImageViewModel>()
                             model = viewModel.uri,
                             contentDescription = null,
                             alignment = Alignment.Center
-//                                    git remote add origin https://github.com/haamiddaaim/tiktok-app.git
+//                                    git remote add origin https://github.com/haamiddaaim/tiktok
 //                                    git branch -M main
 //                                    git push -u origin main
                             )
