@@ -45,6 +45,8 @@ private val viewModel by viewModels<ImageViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        registerReceiver()
+        //how to reciever a broadcast
         println("onCreate")
         enableEdgeToEdge()
         setContent {
@@ -55,7 +57,8 @@ private val viewModel by viewModels<ImageViewModel>()
 //                    contentDescription = null,
 //                    modifier = Modifier
 //                        .fillMaxWidth()
-//                )
+//                )0mn
+
 
 //                val viewModel = viewModel<ContactsViewModel>(
 //                    factory = object : ViewModelProvider.Factory {

@@ -229,3 +229,8 @@ class main {
 //this launchmode triggers onnewIntent fun because theres not a new activity that is created so oncreate will not be called
 //uri is the address of that image on our device which you can read as a byte
 //parcelables are just a way to package or serialize some data that is not a primitive data type
+
+
+//broadcast in android is an intent that you don't just send to one app but to many apps and the apps that receive them will silently handle it without opening an activity
+
+
