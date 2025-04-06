@@ -31,7 +31,6 @@ fun WindowSizeClassDemo (modifier: Modifier = Modifier) {
             modifier = Modifier
                 .fillMaxSize()
                 .padding(innerPadding)
-
         )
         {
             when (windowClass.windowWidthSizeClass) {
@@ -84,7 +83,7 @@ fun MyLazyList (modifier: Modifier = Modifier) {
 
 @Preview(
     showBackground = true,
-    device = Devices.NEXUS_10
+    device = Devices.NEXUS_6
     //how to change the size of the preview in code and set the device that is used
 )
 @Composable

@@ -24,6 +24,7 @@ import com.example.myapplication.basic_layout.RowColumnDemo
 import com.example.myapplication.basic_layout.ScaffoldDemo
 import com.example.myapplication.basic_layout.WindowSizeClassDemo
 import com.example.myapplication.state_management.Counter
+import com.example.myapplication.state_management.homework.TodoItemList
 import com.example.myapplication.state_management.homework.TodoList
 import com.example.myapplication.state_management.number_guess.NumberGuessScreenRoot
 import com.example.myapplication.ui.theme.MyApplicationTheme
@@ -36,7 +37,7 @@ class MainActivity : ComponentActivity() {
             MyApplicationTheme {
                 // A surface container using the 'background' color from the theme
                 Scaffold (modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    TodoList(
+                    TodoItemList(
                         modifier = Modifier
                             .padding(innerPadding),
                     )
