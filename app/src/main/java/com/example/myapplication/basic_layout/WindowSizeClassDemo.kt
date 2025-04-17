@@ -77,6 +77,7 @@ fun MyLazyList (modifier: Modifier = Modifier) {
                 modifier = Modifier
                     .padding(16.dp)
             )
+
         }
     }
 }

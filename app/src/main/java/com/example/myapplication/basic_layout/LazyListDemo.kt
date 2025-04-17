@@ -1,4 +1,4 @@
-@file:OptIn(ExperimentalFoundationApi::class)
+
 
 package com.example.myapplication.basic_layout
 

@@ -6,11 +6,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlin.random.Random
 
-class NumberGuessViewModel(
-   // private val test: String
-    //this is a constuctor argument
-    //where we would inject koin or dagger dependency or a class
-) : ViewModel() {
+class NumberGuessViewModel : ViewModel() {
 //    var state by mutableStateOf(NumberGuessState())
 //        private set
     //this is a compose state as opposed to the state flow below
@@ -21,7 +17,6 @@ class NumberGuessViewModel(
     private var attempts = 0
         //sets attempts initial at 0
     private val _state = MutableStateFlow(NumberGuessState())
-
     //state flow is  used to store ui states
     val state = _state.asStateFlow()
     //how to store the state
