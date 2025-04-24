@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material3.Button
@@ -23,6 +24,7 @@ import androidx.compose.material3.TextField
 import androidx.compose.material3.adaptive.currentWindowAdaptiveInfo
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -41,6 +43,9 @@ fun TodoItemList(modifier: Modifier) {
 
     val windowClass = currentWindowAdaptiveInfo().windowSizeClass
 
+var selecteditem by remember {
+    mutableIntStateOf(0)
+}
 
     var filledTextTitle by remember {
         mutableStateOf("")
@@ -100,11 +105,8 @@ fun TodoItemList(modifier: Modifier) {
                             }, placeholder = {
                                 Text("Description")
                             }
-
                         )
                     }
-
-
                 }
 
                 Button(
@@ -129,17 +131,17 @@ fun TodoItemList(modifier: Modifier) {
             }
         },
 
-    ) { padding ->
+        ) { padding ->
         @Composable
         fun MyLazyList(modifier: Modifier = Modifier) {
-
+            //fun MyLazyList(modifier: Modifier = Modifier, onDeleteButttonClick: (Todo) -> Unit) {
             LazyColumn(
                 modifier = modifier
                     .fillMaxSize()
                     .padding(padding)
 
             ) {
-                items(16) {
+                items(16) { index ->
                     val checked = remember {
                         mutableStateOf(
                             Todo(
@@ -162,7 +164,7 @@ fun TodoItemList(modifier: Modifier) {
 
                             Row {
                                 Text(
-                                    text = "Todo item $it",
+                                    text = "Todo item $index",
 //                                modifier = Modifier
 //                                    .padding(start = 20.dp),
                                     fontWeight = FontWeight.Bold,
@@ -172,7 +174,7 @@ fun TodoItemList(modifier: Modifier) {
                             }
                             Row {
                                 Text(
-                                    text = "Todo description $it",
+                                    text = "Todo description $index",
 //                                modifier = Modifier
 //                                    .padding(start = 20.dp),
                                     textDecoration = if (checked.value.isChecked) TextDecoration.LineThrough else TextDecoration.None
@@ -197,10 +199,12 @@ fun TodoItemList(modifier: Modifier) {
                                 Checkbox(
 
 
-                                        checked = checked.value.isChecked, onCheckedChange = { isChecked ->
+                                    checked = checked.value.isChecked,
+                                    onCheckedChange = { isChecked ->
                                         checked.value = checked.value.copy(isChecked = isChecked)
 
-                                    }, modifier = Modifier.padding(end = 20.dp)
+                                    },
+                                    modifier = Modifier.padding(end = 20.dp)
                                 )
 
 
@@ -210,19 +214,18 @@ fun TodoItemList(modifier: Modifier) {
                         IconButton(
                             onClick = {
 
-                            }
-                            ,
+                            },
                             modifier = Modifier
-                                   .padding(start = 20.dp, end = 20.dp),
+                                .padding(start = 20.dp, end = 20.dp),
                         ) {
-                        Icon(
+                            Icon(
 
-                            imageVector = Icons.Default.Delete,
-                            contentDescription = null,
+                                imageVector = Icons.Default.Delete,
+                                contentDescription = null,
 
-                            )
-                    }
+                                )
                         }
+                    }
                 }
 
             }
@@ -238,11 +241,13 @@ fun TodoItemList(modifier: Modifier) {
                 Row(
                     modifier = Modifier.fillMaxSize()
                 ) {
-
                     MyLazyList(
                         modifier = Modifier
                             .weight(7f)
-                            .fillMaxHeight()
+                            .fillMaxHeight(),
+//                        onDeleteButttonClick = {
+//
+//                        }
                     )
                 }
             }
