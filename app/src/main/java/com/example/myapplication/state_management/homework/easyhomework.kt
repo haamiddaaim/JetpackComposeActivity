@@ -28,7 +28,6 @@ import com.example.myapplication.ui.theme.MyApplicationTheme
 fun TodoList(modifier: Modifier) {
     data class Todo(
         val title: String, val description: String, val isChecked: Boolean
-
     )
 
     @Composable
@@ -93,21 +92,20 @@ fun TodoList(modifier: Modifier) {
                     )
 
                     IconButton(
-                        onClick = {}
-                                ,
-                                modifier = Modifier
-                                .padding(start = 20.dp)
+                        onClick = {},
+                        modifier = Modifier
+                            .padding(start = 20.dp)
                     ) {
-                    Icon(
+                        Icon(
 //                        modifier = Modifier
 //                            .padding(start = 20.dp, top = 11.dp),
-                        imageVector = Icons.Default.Delete,
-                        contentDescription = null,
+                            imageVector = Icons.Default.Delete,
+                            contentDescription = null,
 
-                        )
+                            )
 
-                }
                     }
+                }
             }
         }
     }

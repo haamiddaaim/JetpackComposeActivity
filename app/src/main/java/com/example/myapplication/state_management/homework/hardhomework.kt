@@ -11,7 +11,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material3.Button
@@ -24,7 +23,6 @@ import androidx.compose.material3.TextField
 import androidx.compose.material3.adaptive.currentWindowAdaptiveInfo
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -39,13 +37,24 @@ import androidx.window.core.layout.WindowWidthSizeClass
 import com.example.myapplication.ui.theme.MyApplicationTheme
 
 @Composable
-fun TodoItemList(modifier: Modifier) {
+fun TodoItemListScreenRoot(
+
+) {
+
+}
+
+//@Composable
+//fun TodoItemListScreen(modifier: Modifier = Modifier) {
+//
+//}
+
+@Composable
+fun TodoItemListScreen(
+//    onDeleteButtonClick: () -> Unit,
+//    onAddButtonClick: () -> Unit,
+    modifier: Modifier = Modifier) {
 
     val windowClass = currentWindowAdaptiveInfo().windowSizeClass
-
-var selecteditem by remember {
-    mutableIntStateOf(0)
-}
 
     var filledTextTitle by remember {
         mutableStateOf("")
@@ -64,9 +73,7 @@ var selecteditem by remember {
                         10.dp, Alignment.CenterVertically
                     )
                 )
-
                 {
-
                     Row(
                         modifier = Modifier.padding(start = 10.dp)
                     ) {
@@ -82,7 +89,7 @@ var selecteditem by remember {
                                 filledTextTitle = newText
                                 //how to update the text to the new text
                             }, placeholder = {
-                                Text("Title")
+                                Text("")
                             }
 
                         )
@@ -114,6 +121,7 @@ var selecteditem by remember {
                         .weight(2.5f)
                         .align(Alignment.CenterVertically)
                         .wrapContentSize(),
+
 //                    modifier = Modifier
 //
                     //.fillMaxWidth()
@@ -144,7 +152,7 @@ var selecteditem by remember {
                 items(16) { index ->
                     val checked = remember {
                         mutableStateOf(
-                            Todo(
+                            TodoState(
                                 title = "", description = "", isChecked = false,
                             ),
                         )
@@ -262,7 +270,7 @@ var selecteditem by remember {
 @Composable
 private fun TodoItemListPreview() {
     MyApplicationTheme {
-        TodoItemList(modifier = Modifier)
+        TodoItemListScreen(modifier = Modifier)
     }
 
 }

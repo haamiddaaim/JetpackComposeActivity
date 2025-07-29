@@ -9,15 +9,12 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.FlowRow
-import androidx.compose.foundation.layout.FlowRowOverflow
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
@@ -37,7 +34,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.layout.ModifierInfo
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.SpanStyle
@@ -49,12 +45,10 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.max
 import androidx.compose.ui.unit.sp
 import androidx.window.core.layout.WindowWidthSizeClass
 import com.example.myapplication.R
 import com.example.myapplication.ui.theme.MyApplicationTheme
-import kotlin.random.Random
 
 
 private val tags = listOf(
@@ -90,7 +84,6 @@ fun HotelBookingScreen(modifier: Modifier = Modifier) {
     {
         item {
             Box {
-                //use this whenever we want to draw something on top of another thing and also align it
                 Image(
                     painter = painterResource(R.drawable.living_room),
                     contentDescription = null,
@@ -130,12 +123,6 @@ fun HotelBookingScreen(modifier: Modifier = Modifier) {
                 //padding horizontal stops chips from being right at the edge of the screen on bigger screens
                 horizontalArrangement = Arrangement.spacedBy(8.dp, Alignment.CenterHorizontally),
 
-
-
-                //  verticalArrangement = Arrangement.SpaceBetween
-//        horizontalArrangement = Arrangement.spacedBy(
-//            16.dp,
-//            alignment = Alignment.CenterHorizontally)
 
 //flowlayouts allow text to jump to next line when there's too many to fit in the first line
             ){
@@ -251,6 +238,7 @@ Text(
 fun HotelFadedBanner(modifier: Modifier = Modifier) {
     val windowClass = currentWindowAdaptiveInfo().windowSizeClass
     //how to dynamically increase the font based on the window size class
+
     Row(
         modifier = modifier
             .background(Color.White.copy(alpha = 0.7f))
@@ -387,24 +375,7 @@ icon()
 
 }
 
-//contentAlignment = Alignment.Center
-//){
-//    Image(
-//        painter = painterResource(R.drawable.disappointment),
-//        contentDescription = null
-//    )
-//    Box(
-//        modifier = Modifier
-//            .matchParentSize()
-//            .background(
-//                brush = Brush.verticalGradient(
-//                    colors = listOf(
-//                        Color.Transparent,
-//                        Color.Black
-//                    )
-//                )
-//            )
-//    )
+
 @Preview(
     showBackground = true,
     // device = Devices.NEXUS_9

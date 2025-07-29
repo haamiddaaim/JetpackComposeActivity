@@ -4,11 +4,6 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.lazy.grid.GridCells
-import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
-import androidx.compose.foundation.lazy.staggeredgrid.LazyStaggeredGridScope
 import androidx.compose.foundation.lazy.staggeredgrid.LazyVerticalStaggeredGrid
 import androidx.compose.foundation.lazy.staggeredgrid.StaggeredGridCells
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -30,7 +25,6 @@ LazyVerticalStaggeredGrid (
     //controls every single box width but if some have a larger width then you can use that as well
     //fixedsize controls how wide the boxes are and the left over boxes that can't fit on the row moves to the next one
         // GridCells.Fixed(5) controls how many items are in each row
-//verticalArrangement = Arrangement.spacedBy(16.dp),
     horizontalArrangement = Arrangement.spacedBy(16.dp),
     verticalItemSpacing = 16.dp
 ) {
@@ -42,6 +36,8 @@ LazyVerticalStaggeredGrid (
                         1..200
                     ).dp
                 )
+                //how to show varying heights for each item
+
                 .height(100.dp)
                 //lazyverticalgrid overrides width so we can only have height
                 //.size(100.dp) controls height and width if it's supported

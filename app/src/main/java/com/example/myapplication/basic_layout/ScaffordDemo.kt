@@ -8,13 +8,14 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.automirrored.filled.Send
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.FabPosition
 import androidx.compose.material3.FloatingActionButton
+import androidx.compose.material3.FloatingActionButtonDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.NavigationBarItem
@@ -29,8 +30,8 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.sp
 import com.example.myapplication.ui.theme.MyApplicationTheme
+
 import kotlinx.coroutines.launch
 
 @Composable
@@ -48,7 +49,7 @@ fun ScaffoldDemo(modifier: Modifier = Modifier) {
                 navigationIcon = {
                     IconButton(onClick = {}) {
                         Icon(
-                            imageVector = Icons.AutoMirrored.Default.ArrowBack,
+                            imageVector = Icons.AutoMirrored.Default.Send,
                             contentDescription = "Go back"
                         )
                         //how to implement the back button the app bar
@@ -60,8 +61,10 @@ fun ScaffoldDemo(modifier: Modifier = Modifier) {
         },
         floatingActionButton = {
             FloatingActionButton(
+                shape = FloatingActionButtonDefaults.largeShape,
                 onClick = {
                     scope.launch {
+
                         snackBarState.showSnackbar(
                             message = "Clicked FAB",
                         )
@@ -137,7 +140,7 @@ Box (
 )
 @Composable
 private fun ScaffoldDemoPreview() {
-    MyApplicationTheme {
+    MyApplicationTheme  {
         ScaffoldDemo()
     }
     //scaffold is used for 3d things like navigation drawer bottom navigation top app bar etc

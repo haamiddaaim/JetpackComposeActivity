@@ -10,7 +10,11 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.myapplication.state_management.homework.TodoItemList
+import com.example.myapplication.basic_layout.BoxDemo
+import com.example.myapplication.basic_layout.FlowLayoutDemo
+import com.example.myapplication.basic_layout.HotelBookingScreen
+import com.example.myapplication.basic_layout.HotelBookingScreen2
+import com.example.myapplication.basic_layout.ScaffoldDemo
 import com.example.myapplication.ui.theme.MyApplicationTheme
 
 class MainActivity : ComponentActivity() {
@@ -21,7 +25,7 @@ class MainActivity : ComponentActivity() {
             MyApplicationTheme {
                 // A surface container using the 'background' color from the theme
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    TodoItemList(
+                    HotelBookingScreen(
                         modifier = Modifier
                             .padding(innerPadding),
                     )

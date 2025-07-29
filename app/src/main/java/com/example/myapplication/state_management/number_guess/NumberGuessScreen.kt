@@ -15,8 +15,8 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.example.myapplication.ui.theme.MyApplicationTheme
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.myapplication.ui.theme.MyApplicationTheme
 
 @Composable
 fun NumberGuessScreenRoot(modifier: Modifier = Modifier) {
