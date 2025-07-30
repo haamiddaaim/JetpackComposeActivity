@@ -57,7 +57,7 @@ private val tags = listOf(
     "Instant Booking",
     "Exclusive Deal",
     "Early Bird Discount",
-    "Romantic Gateway",
+    "Romeway",
     "24/7 Support",
 )
 private val offers = mapOf(
@@ -137,7 +137,6 @@ fun HotelBookingScreen(modifier: Modifier = Modifier) {
                         }
                     )
                 }
-
             }
         }
         item {
@@ -147,7 +146,6 @@ fun HotelBookingScreen(modifier: Modifier = Modifier) {
                     .padding(horizontal = 16.dp),
                 //padding horizontal stops chips from being right at the edge of the screen on bigger screens
             ){
-
                 Text(
                     text = """
                     The advertisement features a vibrant and inviting design, showcasing the Hotel California Strawberry nestled in the heart of Los Angeles. Surrounded by the iconic Hollywood Sign, Griffith Park, and stunning beaches, the hotel is perfectly located for guests to explore L.A.’s best attractions.

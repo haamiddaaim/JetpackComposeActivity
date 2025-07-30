@@ -25,7 +25,7 @@ class MainActivity : ComponentActivity() {
             MyApplicationTheme {
                 // A surface container using the 'background' color from the theme
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    HotelBookingScreen(
+                    HotelBookingScreen2(
                         modifier = Modifier
                             .padding(innerPadding),
                     )
@@ -49,7 +49,6 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 )
 @Composable
 fun GreetingPreview() {
-    MyApplicationTheme {
-        Greeting("Android")
-    }
+        HotelBookingScreen()
+
 }

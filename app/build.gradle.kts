@@ -1,13 +1,12 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    alias(libs.plugins.compose.compiler)
+    id("org.jetbrains.kotlin.plugin.compose")
 }
 
 android {
     namespace = "com.example.myapplication"
-    compileSdk = 35
-
+    compileSdk = 36
     defaultConfig {
         applicationId = "com.example.myapplication"
         minSdk = 24
