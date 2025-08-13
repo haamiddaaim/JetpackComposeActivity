@@ -32,12 +32,6 @@ class NeedToKnow {
 //
 
 
-
-
-
-
-
-
 //    IconButton is a composable function that represents a clickable icon, typically used for actions or toggling states.
 //
 //    IconButton can be used for both default actions (like opening a menu) and toggle actions (like favorite/unfavorite).
@@ -76,12 +70,8 @@ class NeedToKnow {
 //
 
 
-
-
-
-
-
-//    FlowRow and FlowColumn are composables that are similar to Row and Column, but differ in that items flow into the next line when the container runs out of space. This creates multiple rows or columns. The number of items in a line can also be controlled by setting maxItemsInEachRow or maxItemsInEachColumn.
+//    FlowRow and FlowColumn are composables that are similar to Row and Column, but differ in that items flow into the next line when the container runs out of space.
+//    This creates multiple rows or columns. The number of items in a line can also be controlled by setting maxItemsInEachRow or maxItemsInEachColumn.
 //
 //    out of the three options that are experimental you can opt into the second one
 //
@@ -104,10 +94,6 @@ class NeedToKnow {
 //    // other properties like colors, modifier, etc.
 //    )
 //
-
-
-
-
 
 
 //    Lazy Lists in Jetpack Compose, specifically LazyColumn and LazyRow, are UI components designed for efficiently displaying large lists of data . Unlike traditional Column and Row layouts which compose and lay out all items at once, even if they're off-screen, Lazy Lists only compose and lay out items that are currently visible within the viewport. This approach is crucial for optimizing performance, particularly when dealing with extensive or dynamic datasets, as it significantly reduces memory consumption and computation time.
@@ -287,21 +273,6 @@ class NeedToKnow {
 //
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //    todo Shortcuts
     //ctrl p
 //comp for composable
@@ -333,8 +304,6 @@ class NeedToKnow {
 //    singleLine: Restricts the input to a single line.
 //    leadingIcon and trailingIcon: Allow adding icons to the TextField for enhanced interactivity.
 //    enabled and readOnly: Control whether the TextField is enabled and editable or read-only.
-
-
 
 
 //    todo Text Modifiers
@@ -403,6 +372,14 @@ class NeedToKnow {
 //    Alignment: Box allows for precise alignment of its children within its boundaries. You can use various alignment such as Alignment.TopStart and Alignment.BottomEnd.
 //
 //    By default, children are positioned at the top-start (top-left) corner unless specified otherwise.
+//
+//    heightIn determines a fixed height of an image for different device sizes
+//
+//    example: Box {
+//    modifier = Modifier.heightIn(
+//        max = 250.dp
+//    )
+//}
 //
 //    contentAlignment allows you to align all children in Box
 //
@@ -634,6 +611,123 @@ class NeedToKnow {
 //    }
 
 
+//    todo Window Size Class
+//
+//    you need to add this dependency to use window size classes androidx-adaptive-android =
+//    {
+//        group =
+//            "androidx.compose.material3.adaptive", name = "adaptive-android", version.ref = "adaptiveAndroid"
+//    }
+//
+//    Jetpack Compose window size classes are a system for categorizing screen sizes in Android applications, enabling developers to build adaptive UIs that adjust to different screen dimensions.
+//
+//    These classes help determine the appropriate layout for various devices and configurations, such as phones, tablets, and foldables, without requiring hardcoded values for specific screen sizes.
+//
+//    Window Size Classes:
+//    These are predefined categories (Compact, Medium, Expanded) based on the available screen width and height.
+//
+//    Width and Height Classes:
+//    Android uses separate classes for width and height, allowing for more granular control over layout adjustments.
+//
+//    Dynamic Adaptation:
+//    Window size classes allow the UI to adapt to changes in window dimensions caused by multi-window mode, foldable device unfolding, or other factors.
+//
+//    Jetpack Compose provides the calculateWindowSizeClass() function (or similar) to determine the current window size
+//    class.
+//
+//    Based on the returned size
+//    class(
+//        e.
+//        g.,
+//        WindowWidthSizeClass.
+//        Compact,
+//        WindowHeightSizeClass.
+//        Medium
+//    ), you can apply different layout logic within your composables.
+//
+//    For example, you might choose to display a bottom navigation bar on a compact screen and a navigation rail on a larger screen.
+//
+//    example:
+//    val windowSizeClass = calculateWindowSizeClass(context)
+//    val numberOfColumns = when (windowSizeClass.widthSizeClass) {
+//        WindowWidthSizeClass.COMPACT -> 1
+//        WindowWidthSizeClass.MEDIUM -> 2
+//        WindowWidthSizeClass.EXPANDED -> 3
+//        else -> 1
+//    }
+//    LazyVerticalGrid(columns = GridCells.Fixed(numberOfColumns))
+//    {
+//        // ... your grid items
+//    }
+//
+//
+
+//    how to change font based on screen size of device
+//
+//    val windowClass = currentWindowAdaptiveInfo().windowSizeClass
+//
+//    fontSize =  when (windowClass.windowWidthSizeClass) {
+//                   WindowWidthSizeClass.COMPACT -> 14.sp
+//                   WindowWidthSizeClass.MEDIUM -> 24.sp
+//                   WindowWidthSizeClass.EXPANDED -> 28.sp
+//                   else -> 18.sp
+//               }
+
+
+
+//
+//    Width size classes
+//    Compact width: Width less than 600dp. Typically represents a phone in portrait orientation or a closed foldable device.
+//    Medium width: Width between 600dp and 839dp. Can represent a tablet in portrait, most large unfolded inner displays in portrait, or potentially a phone in landscape.
+//    Expanded width: Width between 840dp and 1199dp. Often represents a tablet in landscape, most large unfolded inner displays in landscape, or a desktop environment.
+//    Large width: Width between 1200dp and 1599dp. Represents large tablet displays.
+//    Extra-large width: Width equal to or greater than 1600dp. Represents desktop displays.
+//
+//    Height size classes
+//    Compact height: Height less than 480dp. Typically represents a phone in landscape orientation.
+//    Medium height: Height between 480dp and 899dp. Can represent tablets in landscape or phones in portrait.
+//    Expanded height: Height equal to or greater than 900dp. Typically represents tablets in portrait.
+//
+//
+//    PreviewScreenSizes allows you to see multiple screens inside the preview
+//
+//    example :
+//    @PreviewScreenSizes
+//    @Preview(
+//        showBackground = true,
+//        device = Devices.NEXUS_6
+//        //how to change the size of the preview in code and set the device that is used
+//    )
+//
+//    Preview Parameters
+//
+//    name: Sets a descriptive name for the preview in the Android Studio Preview panel.
+//    group: Groups related previews together for better organization.
+//    widthDp/heightDp: Defines the width and height of the preview in density-independent pixels (dp).
+//    showBackground: A boolean value (true/false) to show or hide the background of the preview.
+//    showSystemUi: A boolean value to display a full-screen preview with system UI elements like the status bar.
+//    device: Specifies a particular device configuration for the preview. You can use predefined device IDs (e.g., "id:pixel_4") or define custom configurations using spec:width=px,height=px,dpi=int….
+//    uiMode: Sets the UI mode for the preview, such as light or dark theme (e.g., Configuration.UI_MODE_NIGHT_YES for dark mode).
+//    locale: Specifies the locale for the preview, enabling you to test how your UI looks in different languages and layouts (including right-to-left languages).
+//    fontScale: Adjusts the font scaling factor, simulating different font size accessibility settings.
+//    apiLevel: Sets the API level to be used for rendering the Composable function.
+//
+//
+//    you can also use @PreviewParameter to provide dynamic data or configurations to your previews. This is particularly useful for testing Composables with different states or variations of data without creating separate @Preview annotations for each scenario.
+//    To use @PreviewParameter:
+//    Create a
+//    class that implements PreviewParameterProvider and provides a sequence of data objects.
+//    Annotate a parameter in your preview function with @PreviewParameter and specify the provider
+//    class.
+//    The Compose Preview will generate a separate preview for each data item provided by the provider, allowing you to quickly visualize how the Composable behaves with different data inputs.
+//
+//
+//
+//
+//    @PreviewDynamicColors: Shows the Composable with different wallpaper-based dynamic colors.
+//    @PreviewFontScale: Displays the Composable with various font sizes.
+//    @PreviewLightDark: Renders the Composable in both light and dark themes.
+//    @PreviewScreenSizes: Previews the Composable on different reference device screen sizes.
 
 
 

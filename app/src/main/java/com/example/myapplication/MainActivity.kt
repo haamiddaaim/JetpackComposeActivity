@@ -3,6 +3,7 @@ package com.example.myapplication
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
@@ -14,20 +15,21 @@ import com.example.myapplication.basic_layout.BoxDemo
 import com.example.myapplication.basic_layout.FlowLayoutDemo
 import com.example.myapplication.basic_layout.HotelBookingScreen
 import com.example.myapplication.basic_layout.HotelBookingScreen2
+import com.example.myapplication.basic_layout.LazyGridDemo
+import com.example.myapplication.basic_layout.ProjectX
 import com.example.myapplication.basic_layout.ScaffoldDemo
 import com.example.myapplication.ui.theme.MyApplicationTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        enableEdgeToEdge()
         setContent {
             MyApplicationTheme {
                 // A surface container using the 'background' color from the theme
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    HotelBookingScreen2(
-                        modifier = Modifier
-                            .padding(innerPadding),
+                    ProjectX(
+                        modifier = Modifier.padding(innerPadding),
                     )
                 }
             }
@@ -35,20 +37,18 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier.fillMaxSize()
-    )
-}
+//@Composable
+//fun Greeting(name: String, modifier: Modifier = Modifier) {
+//    Text(
+//        text = "Hello $name!",
+//        modifier = modifier
+//    )
+//}
 
-@Preview(
-    showBackground = true,
-    backgroundColor = 0xFFF
-)
+@Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
-        HotelBookingScreen()
-
+    MyApplicationTheme {
+        //Greeting("Android")
+    }
 }
