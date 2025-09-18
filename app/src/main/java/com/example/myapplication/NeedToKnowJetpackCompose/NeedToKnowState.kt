@@ -1,6 +1,6 @@
-package com.example.myapplication.state_management.homework
+package com.example.myapplication.NeedToKnowJetpackCompose
 
-class NeedToKnow {
+class NeedToKnowState {
 
 //    TODO Jetpack Compose
 //
@@ -30,6 +30,8 @@ class NeedToKnow {
 //
 //    the compose way needs the dependency androidx-lifecycle-runtime-ktx
 //
+
+
 
 
 //    IconButton is a composable function that represents a clickable icon, typically used for actions or toggling states.
@@ -293,36 +295,8 @@ class NeedToKnow {
 //    fillMaxHeight
 //    wrapContentSize() to shrink to fit content.
 
-//    todo Text0Field Modifiers
-//    label and placeholder: Provide hints to the user about the expected input.
-//
-//    the difference between the two is that label is used to show a floating label that moves above the text field when focused, while placeholder is shown inside the field itself and vanishes on typing.
-//
-//    modifier: Used to apply styling and layout changes to the TextField.
-//    keyboardOptions and keyboardActions: Configure the behavior of the software keyboard, including keyboard type (e.g., numeric, email) and IME actions (e.g., Done, Go).
-//    visualTransformation: Modifies the visual representation of the text without changing its underlying value , useful for password masking or formatting.
-//    singleLine: Restricts the input to a single line.
-//    leadingIcon and trailingIcon: Allow adding icons to the TextField for enhanced interactivity.
-//    enabled and readOnly: Control whether the TextField is enabled and editable or read-only.
 
 
-//    todo Text Modifiers
-//    color: Sets the color of the text.         example: color = Color.Blue
-//    fontSize: Controls the size of the text
-//    fontStyle: Specifies the typeface variant, like FontStyle.Italic or FontStyle.Normal.
-//    fontWeight: Defines the thickness of the typeface, e.g., FontWeight.Bold.
-//    fontFamily: Selects the font family to render the text, which can include system fonts like FontFamily.Serif or custom fonts, according to Android Developers.
-//    letterSpacing: Adjusts the spacing between individual letters.
-//    textDecoration: Applies decorations like TextDecoration.Underline or TextDecoration.LineThrough.
-//    textAlign: Sets the horizontal alignment of the text within the Text composable's surface area. It supports values like TextAlign.Center, TextAlign.End, TextAlign.Justify, TextAlign.Left, TextAlign.Right, and TextAlign.Start.
-//    lineHeight: Controls the height of each line of text.
-//    overflow: Specifies how to handle text that exceeds the available space, for example, using TextOverflow.Ellipsis to truncate with an ellipsis.
-//    softWrap: Determines whether the text should break onto the next line when the container's width is reached. By default, it's true.
-//    maxLines: Sets an optional maximum number of lines for the text to span.
-//    minLines: Sets the minimum height in terms of minimum number of visible lines.
-//    style: Allows you to apply a TextStyle object to configure various text properties like color, font, line height, and shadow.
-//    onTextLayout (Function): A callback triggered when the text layout is calculated. This provides a TextLayoutResult object with details about the layout, which can be used for custom decorations or functionalities.
-//    inlineContent (Map<String, InlineTextContent>): Used to insert composable into the text layout by replacing specific text ranges.
 
 
 //    todo Column
@@ -357,54 +331,12 @@ class NeedToKnow {
 //
 //    Options include Alignment.Top, Alignment.CenterVertically, and Alignment.Bottom
 
-//    todo Box
-//
-//    Box is a fundamental layout component that allows you to stack elements on top of each other.
-//
-//    Stacking Children: The primary purpose of Box is to stack its children on top of each other for example creating overlays, backgrounds, or layered designs.
-//
-//    Overlays: Placing elements like text, icons, or buttons on top of other content, such as images or videos.
-//
-//    Layered Designs: Creating visually rich interfaces by stacking elements to achieve effects like gradients or transparencies.
-//
-//    Layering Order: The order in which children are declared within the Box determines their stacking order. The first child declared will be at the bottom of the stack, and subsequent children will be stacked on top of it.
-//
-//    Alignment: Box allows for precise alignment of its children within its boundaries. You can use various alignment such as Alignment.TopStart and Alignment.BottomEnd.
-//
-//    By default, children are positioned at the top-start (top-left) corner unless specified otherwise.
-//
-//    heightIn determines a fixed height of an image for different device sizes
-//
-//    example: Box {
-//    modifier = Modifier.heightIn(
-//        max = 250.dp
-//    )
-//}
-//
-//    contentAlignment allows you to align all children in Box
-//
-//    example:  contentAlignment = Alignment.Center
-//
-//    Modifier.align() is used to set different alignments for individual children, you can use the Modifier.align() modifier on each child within the Box scope.
-//
-//    example: Text(
-//    text = "Top Start",
-//    modifier = Modifier.align(Alignment.TopStart)
-//    )
-//
-//    The align() modifier on a child takes precedence over the Box's contentAlignment parameter.
 
-//    brush allows you to create a gradient in a box
-//    example:
-//    Box(
-//    modifier = Modifier
-//    .matchParentSize() //it will make it match whatever the parent composable is
-//    .background(
-//    brush = Brush.verticalGradient(
-//    colors = listOf(
-//    Color.Transparent,
-//    Color.Black
-//    )
+
+
+
+
+
 
 
 //    todo Arrangements
@@ -525,16 +457,7 @@ class NeedToKnow {
 
 
 
-//    Spacer is a composable that represents a blank space in your UI.
-//
-//    It's used to add space between other UI elements, like Text, Buttons, or other Composable.
-//
-//    It doesn't display any visual content itself; it only takes up a defined amount of space in your layout.
-//
-//    example:
-//    Spacer(modifier = Modifier.size(30.dp))
-//
-//    add this in between a textfield and button
+
 //
 //
 //
@@ -573,22 +496,7 @@ class NeedToKnow {
 
 
 
-//    TextField is a composable designed to allow users to input and edit text. It can be used for creating forms, search bars, anything that requires text input.
-//
-//    OutlinedTextField is a styled TextField with a border around the input field, offering a clean and subtle appearance.
-//
-//    BasicTextField: This is a lower-level composable that provides the core functionality for text input without any decorations or styling.
-//    It's suitable for custom implementations where you need to build the appearance from scratch.
 
-//    Example:
-//    var name by remember {
-//        mutableStateOf("") //sets the default text field to empty
-//        TextField(
-//            value = name,
-//            onValueChange = { text ->  //will be called with a new text after it is changed
-//                name = text
-//
-//                )
 
 
 //using by makes writing values easier
@@ -597,18 +505,6 @@ class NeedToKnow {
 
 
 
-
-//
-//    state refers to any data that can change over time and influences the UI
-//    example:
-//    var count = mutablestateOf(0) //how to declare state
-//
-//
-//    the remember function serves as a mechanism to store and retain state across recompositions of a Composable function
-//    example:
-//    var count by remember {
-//        mutableStateOf(0)
-//    }
 
 
 //    todo Window Size Class

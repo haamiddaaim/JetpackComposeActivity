@@ -12,7 +12,6 @@
 
 package com.example.myapplication.basic_layout
 
-
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -53,19 +52,16 @@ fun ProjectX(modifier: Modifier = Modifier,
             .background(PrimaryRed)
             .clip(RoundedCornerShape(5.dp))
             .padding(16.dp)
-            .wrapContentHeight()
-        ,
+            .wrapContentHeight(),
         horizontalAlignment = Alignment.End,
                 verticalArrangement = Arrangement.spacedBy(16.dp),
-
     ) {
         Row (
             //verticalArrangement = Arrangement.spacedBy(4.dp),
             modifier = Modifier
                 //.weight(2f)
            // .background(Color.Red)
-                .fillMaxWidth()
-            ,
+                .fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
             //horizontalAlignment = Alignment.Start
@@ -74,7 +70,6 @@ fun ProjectX(modifier: Modifier = Modifier,
         ) {
             LabeledIcon3(
                 text = title,
-
                 icon =
                     {
                         (
@@ -83,7 +78,6 @@ fun ProjectX(modifier: Modifier = Modifier,
                                     tint = Color.White,
                                     contentDescription = null
                                 )
-
                                 )
                     }
             )

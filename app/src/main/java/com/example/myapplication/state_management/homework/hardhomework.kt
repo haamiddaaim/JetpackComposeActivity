@@ -150,6 +150,7 @@ fun TodoItemListScreen(
 
             ) {
                 items(16) { index ->
+                  //  ItemRow()
                     val checked = remember {
                         mutableStateOf(
                             TodoState(
@@ -219,48 +220,50 @@ fun TodoItemListScreen(
                             }
 
                         }
-                        IconButton(
-                            onClick = {
 
-                            },
-                            modifier = Modifier
-                                .padding(start = 20.dp, end = 20.dp),
-                        ) {
-                            Icon(
-
-                                imageVector = Icons.Default.Delete,
-                                contentDescription = null,
-
-                                )
-                        }
-                    }
                 }
 
             }
 
         }
+            @Composable
+            fun ItemRow( item : String,onDeleteClick: () -> Unit) {
 
+
+                IconButton(
+                    onClick = {
+                        onDeleteClick
+                    },
+                    modifier = Modifier
+                        .padding(start = 20.dp, end = 20.dp),
+                ) {
+                    Icon(
+
+                        imageVector = Icons.Default.Delete,
+                        contentDescription = null,
+
+                        )
+                }
+            }
         when (windowClass.windowWidthSizeClass) {
             WindowWidthSizeClass.COMPACT, WindowWidthSizeClass.MEDIUM -> {
-                MyLazyList()
+              //  MyLazyList()
             }
 
             WindowWidthSizeClass.EXPANDED -> {
                 Row(
                     modifier = Modifier.fillMaxSize()
                 ) {
-                    MyLazyList(
-                        modifier = Modifier
-                            .weight(7f)
-                            .fillMaxHeight(),
-//                        onDeleteButttonClick = {
-//
-//                        }
-                    )
+//                    MyLazyList(
+//                        modifier = Modifier
+//                            .weight(7f)
+//                            .fillMaxHeight(),
+////                        onDeleteButttonClick = {
+////
+////                        }
+//                    )
                 }
-            }
-        }
-    }
+            }}}}
 }
 
 @Preview(
