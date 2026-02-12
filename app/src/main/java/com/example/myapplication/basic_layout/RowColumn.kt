@@ -68,8 +68,6 @@ Box(
                 .height(50.dp)
                 .fillMaxWidth()
                 .background(Color.Blue)
-
-
         )
         Box(
             modifier = Modifier

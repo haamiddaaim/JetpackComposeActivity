@@ -58,4 +58,6 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
         implementation (libs.androidx.adaptive)
 
-}
+        implementation(libs.androidx.compose.material.icons.extended.android)
+
+    }

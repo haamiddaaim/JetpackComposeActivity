@@ -1,5 +1,6 @@
 package com.example.myapplication.state_management.homework
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -14,6 +15,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
@@ -28,8 +30,7 @@ fun Easy2(modifier: Modifier = Modifier) {
         mutableStateOf(Easy2Model(title = "Bring out the trash", description = "Better do this before wife comes home", isChecked = false ))
     }
     Row(
-        modifier = modifier
-            // .background(Color.Red.copy(alpha = 0.7f))
+        modifier = modifier.background(Color.Red.copy(alpha = 0.7f))
             // alpha refers to the transparency of a color, with 0 being fully transparent and 255 being fully opaque.
             .padding(16.dp)
             .fillMaxWidth(),
@@ -40,7 +41,7 @@ fun Easy2(modifier: Modifier = Modifier) {
             verticalArrangement = Arrangement.spacedBy(4.dp),
             //if you want to add space between your things inside of column...you can give it a spacing arrangement
             modifier = Modifier
-            // .background(Color.Yellow)
+            .background(Color.Yellow)
         ) {
             Text(
                 text = easymodel.title,
@@ -53,7 +54,7 @@ fun Easy2(modifier: Modifier = Modifier) {
             )
         }
         Checkbox(
-            //  modifier = Modifier.background(Color.Black),
+              modifier = Modifier.background(Color.Black),
             checked = isChecked,
             onCheckedChange = { newState ->
                 isChecked = newState

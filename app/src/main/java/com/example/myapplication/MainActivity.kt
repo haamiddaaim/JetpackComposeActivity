@@ -5,7 +5,10 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.statusBars
+import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -18,9 +21,11 @@ import com.example.myapplication.basic_layout.HotelBookingScreen2
 import com.example.myapplication.basic_layout.LazyGridDemo
 import com.example.myapplication.basic_layout.LazyListDemo
 import com.example.myapplication.basic_layout.ProjectX
+import com.example.myapplication.basic_layout.RowColumnDemo
 import com.example.myapplication.basic_layout.ScaffoldDemo
 import com.example.myapplication.state_management.StateHoistingDemo
 import com.example.myapplication.state_management.hardhomework.HardHomeworkScreen
+import com.example.myapplication.state_management.hardhomework.HardHomeworkViewModel
 import com.example.myapplication.state_management.homework.Easy2
 import com.example.myapplication.state_management.homework.Hard2
 import com.example.myapplication.state_management.homework.TodoItemListScreen
@@ -35,14 +40,16 @@ class MainActivity : ComponentActivity() {
         setContent {
             MyApplicationTheme {
                 // A surface container using the 'background' color from the theme
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+//                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     HardHomeworkScreen(
-                        modifier = Modifier.padding(innerPadding),
+                        modifier = Modifier.statusBarsPadding()
+                            .navigationBarsPadding(),
+                       // viewModel = HardHomeworkViewModel()
+
                     )
                 }
             }
         }
-    }
 }
 
 //@Composable
@@ -52,8 +59,6 @@ class MainActivity : ComponentActivity() {
 //        modifier = modifier
 //    )
 //}
-
-
 
 @Preview(showBackground = true)
 @Composable
